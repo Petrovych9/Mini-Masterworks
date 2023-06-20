@@ -5,9 +5,39 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="/app/static/css/style.css">
+    <title>FoodClub</title>
 </head>
 <body>
-
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container">
+                <div class="header__body">
+                    <a href="/" class="header__logo">
+                    Food Club
+                    </a>
+                    <nav class="header__menu menu">
+                    <div class="menu__body">
+                        <ul class="menu__list">
+                            {% for item in menu %}
+                            <li class="menu__item">
+                                <a href="#" class="menu__link">{{ item }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main class="page">
+            <div class="page__container">MAin</div>
+        </main>
+        <footer class="footer">
+            <div class="footer__container">
+               <div class="footer__body">Footer</div> 
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

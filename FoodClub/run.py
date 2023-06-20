@@ -1,4 +1,4 @@
-from app import createApp
+from FoodClub import createApp
 
 app = createApp()
 
