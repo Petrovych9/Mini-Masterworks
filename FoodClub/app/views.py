@@ -4,11 +4,13 @@ mainBlueprint = Blueprint('main', __name__)
 adminBlueprint = Blueprint('admin', __name__)
 authBlueprint = Blueprint('authentication', __name__)
 
+menu = ['Home', 'New recipe', 'Profile', ]
+
 
 #main
 @mainBlueprint.route("/")
 def index():
-    return "Hello fucking world"
+    return render_template('base.html', menu=menu)
 
 
 #admin
