@@ -8,7 +8,11 @@ adminBlueprint = Blueprint('admin', __name__)
 def index():
     return "Hello fucking world"
 
-
+def home():
+    a =10
+    b=2
+    c = a +b
+    return "hello"
 
 
 
