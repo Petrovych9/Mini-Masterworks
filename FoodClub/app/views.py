@@ -10,7 +10,7 @@ menu = ['Home', 'New recipe', 'Profile', '1111' ]
 #main
 @mainBlueprint.route("/")
 def index():
-    return render_template('base.html', menu=menu)
+    return render_template('index.html', menu=menu)
 
 
 #admin
