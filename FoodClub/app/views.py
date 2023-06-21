@@ -1,16 +1,20 @@
-from flask import Blueprint,render_template
+from flask import Blueprint,render_template, request, url_for
+from .menu import menu
 
 mainBlueprint = Blueprint('main', __name__)
-adminBlueprint = Blueprint('admin', __name__)
-authBlueprint = Blueprint('authentication', __name__)
-
-menu = ['Home', 'New recipe', 'Profile', '1111' ]
 
 
 #main
-@mainBlueprint.route("/")
-def index():
-    return render_template('index.html', menu=menu)
+@mainBlueprint.route("/", methods=["GET", ' POST'])
+def home():
+    return render_template('base.html', menu=menu())
 
 
-#admin
+@mainBlueprint.route('/new-recipe')
+def newRecipe():
+    pass
+
+
+@mainBlueprint.route('/profile')
+def profile():
+    pass
