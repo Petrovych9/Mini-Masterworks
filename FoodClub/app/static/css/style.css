@@ -41,8 +41,12 @@ body{
 .header__menu {
 }
 .menu {
+    
 }
 .menu__body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 .menu__list {
     display: flex;
@@ -54,6 +58,71 @@ body{
 }
 .menu__link {
 }
+
+/*FOOTER*/
+.footer {
+}
+.footer__container {
+}
+.footer__body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px 0px;
+}
+.footer__content {
+    display: flex;
+    flex-direction: column;
+}
+.content-footer {
+}
+.content-footer__title {
+    font-size: 24px;
+    padding: 15px 0px;
+}
+.content-footer__text {
+    max-width: 400px;
+    line-height: 1.4;
+}
+.footer__menu {
+}
+.menu-footer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.menu-footer__item {
+    display: flex;
+    flex-direction: column;
+}
+.menu-footer__title {
+    font-weight: 500;
+    font-size: 18px;
+}
+.menu-footer__list {
+    color: #BDC5CC;
+}
+.list-menu-footer {
+}
+.list-menu-footer__item {
+}
+.menu-footer__social {
+}
+.social-menu-footer {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 20px;
+}
+.social-menu-footer__item {
+}
+.footer__copy {
+    border-top:1px solid #BDC5CC;
+    padding: 20px;
+    text-align: center;
+}
+/*FOOTER*/
+
 /**/
 
 /**/
