@@ -4,6 +4,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from .views import menu
 from . import db
 from .models import User
+from flask_login import login_user, login_required, logout_user, current_user
 
 authBlueprint = Blueprint('auth', __name__)
 
@@ -42,7 +43,7 @@ def signup():
             flask.flash('Account created', category="success")
             return redirect(url_for('main.home'))
 
-    return render_template('signUP.html', menu=menu(), email='@gmail.com', phone='+380')
+    return render_template('signUP.html', menu=menu(), email='@gmail.com', phone='+380', user=current_user)
 
 
 @authBlueprint.route("/sign-in", methods=["GET", 'POST'])
@@ -55,10 +56,17 @@ def signin():
         if user:
             if check_password_hash(user.password, password):
                 flask.flash('Welcome!', category='success')
+                login_user(user, remember=True)
                 return redirect(url_for('main.home'))
             else:
                 flask.flash('Invalid password', category='error')
         else:
             flask.flash('Invalid email', category='error')
 
-    return render_template('signIN.html', menu=menu(), email='@gmail.com')
+    return render_template('signIN.html', menu=menu(), email='@gmail.com', user=current_user)
+
+@authBlueprint.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('auth.signin'))

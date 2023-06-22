@@ -20,9 +20,19 @@
                     <div class="menu__body">
                         <ul class="menu__list">
                             {% for key, value in menu.items() %}
+                            {% if user.is_authenticated %}
+                            {% if key != 'Sign In' and key != 'Sign Up' %}
                             <li class="menu__item">
                                 <a href="{{ value }}" class="menu__link">{{ key }}</a>
                             </li>
+                            {% endif %}
+                            {% else %}
+                            {% if key == 'Sign In' or key == 'Sign Up' %}
+                            <li class="menu__item">
+                                <a href="{{ value }}" class="menu__link">{{ key }}</a>
+                            </li>
+                            {% endif %}
+                            {% endif %}
                             {% endfor %}
                         </ul>
                     </div>
@@ -72,12 +82,20 @@
                         <div class="menu-footer__item">
                         <div class="menu-footer__title">Menu</div>
                         <ul class="menu-footer__list list-menu-footer">
-                            {% for i in menu %}
+                            {% for key, value in menu.items() %}
+                            {% if user.is_authenticated %}
+                            {% if key != 'Sign In' and key != 'Sign Up' %}
                             <li class="list-menu-footer__item">
-                                <a href="" class="list-menu-footer__link">
-                                    {{ i }}
-                                </a>
+                                <a href="{{ value }}" class="list-menu-footer__link">{{ key }}</a>
                             </li>
+                            {% endif %}
+                            {% else %}
+                            {% if key == 'Sign In' or key == 'Sign Up' %}
+                            <li class="list-menu-footer__item">
+                                <a href="{{ value }}" class="list-menu-footer__link">{{ key }}</a>
+                            </li>
+                            {% endif %}
+                            {% endif %}
                             {% endfor %}
                         </ul>
                     </div>
