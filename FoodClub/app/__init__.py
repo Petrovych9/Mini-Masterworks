@@ -28,7 +28,7 @@ def create_app():
 
 
 def create_database(app):
-    if not os.path.exists('./' + DB_NAME):
+    if not os.path.exists('./instance' + DB_NAME):
         with app.app_context():
             db.create_all()
-        print("Database created!")
+            print("Database created!")
