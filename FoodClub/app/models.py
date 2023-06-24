@@ -9,13 +9,16 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(150), unique=True)
     phone = db.Column(db.Integer)
     password = db.Column(db.String(150))
-    recipes = db.relationship('Recipe')
+    recipes = db.relationship('Recipe', backref=db.backref('user'))
 
 
 class Recipe(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(120))
+    dish_name = db.Column(db.String(120))
+    cooking_time = db.Column(db.Integer)
     description = db.Column(db.Text)
     ingredients = db.Column(db.Text)
+    image = db.Column(db.LargeBinary)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    user = db.relationship('User', backref=db.backref('recipe', lazy=True))  # lazy=True вказує, що завантаження пов'язаних об'єктів буде лінивим, тобто вони будуть завантажуватися лише при зверненні до них.
+
+

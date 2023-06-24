@@ -33,10 +33,8 @@ def signup():
         elif len(password) < 1:
             flask.flash('Password too short', category="error")
         else:
-            new_user = User(firstname=first_name,
-                           lastname=last_name,
-                           email=email,
-                           phone=phone,
+            new_user = User(firstname=first_name, lastname=last_name,
+                           email=email, phone=phone,
                            password=generate_password_hash(password, method='scrypt'))
             db.session.add(new_user)
             db.session.commit()
@@ -64,6 +62,7 @@ def signin():
             flask.flash('Invalid email', category='error')
 
     return render_template('signIN.html', menu=menu(), email='@gmail.com', user=current_user)
+
 
 @authBlueprint.route('/logout')
 @login_required
