@@ -18,7 +18,7 @@ class Recipe(db.Model):
     cooking_time = db.Column(db.Integer)
     description = db.Column(db.Text)
     ingredients = db.Column(db.Text)
-    image = db.Column(db.LargeBinary)
+    image = db.Column(db.Text)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 

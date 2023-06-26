@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page__cards">
+  {% for recipe in recipes %}
+  <div class="page__card card">
+  <div class="card__image">
+    <img src="data:image/jpeg;base64,{{recipe.image}}" alt="image">'
+  </div>
+  <div class="card__body body-card">
+    <div class="body-card__text">
+      <div class="body-card__title">
+        <a href="" class="body-card__link">{{ recipe.dish_name }}</a>
+      </div>
+      <div class="body-card__time">20 min</div>
+    </div>
+    <div class="body-card__icons">
+      <div class="body-card__rating"></div>
+      <div class="body-card__buttons">
+        <button class="body-card__like">
+          <img src="{{ url_for('static', filename='images/all_recipe/like.svg') }}" alt="">
+        </button>
+        <button class="body-card__comment">
+          <img src="{{ url_for('static', filename='images/all_recipe/comments.svg') }}" alt="">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+  {% endfor %}
+</div>
+{% endblock %}
+<script>
+        function encode_base64(data) {
+            var bytes = new Uint8Array(data.length);
+            for (var i = 0; i < data.length; i++) {
+                bytes[i] = data.charCodeAt(i);
+            }
+            var base64 = btoa(String.fromCharCode.apply(null, bytes));
+            return base64;
+        }
+    </script>
+
+
+
+
+
+
