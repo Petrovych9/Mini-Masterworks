@@ -1,40 +1,37 @@
-# Mini projects
+# Mini Masterworks
 
 
-## 1. Book management system
-> Platform for saving information about books
+## 1. BookTrack: Book Management System
+> Book Information Storage Platform
 
-## 2. Get location by ip
-> Provide a information about location by inputted IP address
+## 2. IPlocate: Get Location by IP Project
+> Retrieve Information Based on Inputted IP Address
 
-## 3. Extract audio from video
+## 3. AudioHarvest: Extract Audio from Video
 > Possibility to extract from any video by provided YouTube URL
 
-# Get started TODO
-Clone the repos
+# Get started
+### Clone the repository
 
 1.
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-2.
+   cd folder-to-save
+      ```
+2. 
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone git@github.com:Petrovych9/Mini-Masterworks.git
    ```
-3.
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-# Features
-### Book management system
-1. Saving information about book and author to database
-2. access to list of all books from database
 
-### Get location by ip
+# Features
+### BookTrack
+1. Storing information about books and authors in the database.
+2. Accessing a complete list of all books from the database.
+
+### IPlocate
 1. Access to information by ID address.
 
-### Extract audio from video
-1. Possibility to extract audio from video by provided youtube url.
+### AudioHarvest
+1. Possibility to extract audio from video using a provided YouTube URL.
 
 ## Built With 
 - Python
@@ -50,6 +47,6 @@ Clone the repos
 
 ### Other projects TODO
 
-- current - [Mini Projects]()
-- [Food Club]()
+- current - [Mini Projects](https://github.com/Petrovych9/Mini-Masterworks)
+- [Food Club](https://github.com/Petrovych9/Food-Club)
 - [Training Club]()
