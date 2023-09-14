@@ -1,12 +1,11 @@
-'''All functions that necessary for application'''
+"""All functions that necessary for application"""
 import datetime
 
 import flask
 import pandas as pd
 
 from connectDB import callExcelDb
-from flask import Flask, render_template, request
-
+from flask import request
 
 
 def collectData():
@@ -25,6 +24,7 @@ def collectData():
         flask.flash("0 pages",category='error')
     pages = pages + ' pages'
     return name, author, pages, booktype, today
+
 
 def createDf(name, author, pages, booktype, today):
     excelBooksDB = callExcelDb()

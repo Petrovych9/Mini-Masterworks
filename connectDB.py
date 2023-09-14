@@ -1,17 +1,15 @@
 import os
 import time
 
-import mysql.connector
-import pymongo
 import pandas as pd
 import sqlite3 as sq
 
 '''Functions for interacting with excelDB and SqLiteDB'''
 
-path = '/Main projects/BookManagementSystem/Database'
+path = '/Database'
 excelDbFilePath = path + "/booksDB.xlsx"
 sqliteFilePath = path + "/books.db"
-headColumns=['book_id','user', 'book_name', 'book_author', 'book_pages', 'book_type', 'book_saved']
+headColumns = ['book_id', 'user', 'book_name', 'book_author', 'book_pages', 'book_type', 'book_saved']
 
 
 #SQLite Database

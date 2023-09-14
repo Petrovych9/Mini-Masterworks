@@ -1,7 +1,7 @@
 import connectDB
 import extraFunc
-import infoByIP
-import file
+import IP_locate
+import audio_harvest
 
 
 from flask import Flask, render_template, request, flash
@@ -52,7 +52,7 @@ def getAllbooks():
 def getAudio():
     if request.method == "POST":
         url = request.form['url']
-        audioPath = file.extractAudio(url)
+        audioPath = audio_harvest.extractAudio(url)
     else:
         audioPath = 'AUDIO_2.mp3'
     return render_template('getAudio.html', audioPath=audioPath) #getAudio page
@@ -62,10 +62,10 @@ def getAudio():
 def getLocationByIP():
     if request.method == "POST":
         ip = request.form['ipp']
-        data = infoByIP.getData(ip)
+        data = IP_locate.getData(ip)
         print(data)
-        print(data['lat'],data['lon'])
-        infoByIP.getLocation(data['lat'], data['lon'])
+        print(data['lat'], data['lon'])
+        IP_locate.getLocation(data['lat'], data['lon'])
     else:
         data = 0
     return render_template('getLocationByIP.html', data=data) #getLocationByIP page

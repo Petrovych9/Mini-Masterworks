@@ -2,9 +2,6 @@ import flask
 import requests
 import folium
 
-from flask import request
-
-
 
 def getData(ip):
     if ip == None or len(ip) <= 3:
@@ -27,11 +24,13 @@ def getData(ip):
         except requests.exceptions.ConnectionError:
             flask.flash("Check your connection", category='error')
 
+
 def getLocation(lat,lon):
     area = folium.Map(location=[lat,lon], zoom_start=8)
-    folium.Marker([lat,lon]).add_to(area)
+    folium.Marker([lat, lon]).add_to(area)
     area.save("templates/location.html")
     print("Area created")
+
 
 def main():
     ip = input("Ented desire IP address:")
@@ -40,5 +39,6 @@ def main():
         print(f'{k} : {v}')
     getLocation(data['lat'],data['lon'])
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     main()
