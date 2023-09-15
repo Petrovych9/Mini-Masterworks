@@ -48,6 +48,6 @@
 
 ### Other projects TODO
 
-- current - [Mini Projects](https://github.com/Petrovych9/Mini-Masterworks)
+- current - [Mini Masterworks](https://github.com/Petrovych9/Mini-Masterworks)
 - [Food Club](https://github.com/Petrovych9/Food-Club)
 - [Training Club]()
