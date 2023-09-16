@@ -8,7 +8,7 @@
 > Retrieve Information Based on Inputted IP Address
 
 ## 3. AudioHarvest: Extract Audio from Video
-> Possibility to extract from any video by provided YouTube URL
+> Possibility to extract audio from any video by provided YouTube URL
 
 # Get started
 ### Clone the repository
