@@ -46,7 +46,7 @@
 ## Contact
 [GitHub - Petrovych9](https://github.com/Petrovych9)
 
-### Other projects TODO
+### Other projects
 
 - current - [Mini Masterworks](https://github.com/Petrovych9/Mini-Masterworks)
 - [Food Club](https://github.com/Petrovych9/Food-Club)
